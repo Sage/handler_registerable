@@ -2,16 +2,14 @@
 module HandlerRegisterable
   # Registry Concept
   module Registry
-    @@default = nil
-
     # Enables setting the default handler to use.
     def default=(value)
-      @@default = value
+      @default = value
     end
 
     # Get the default handler
     def default
-      @@default
+      @default
     end
 
     # Register a new item in the store
@@ -21,7 +19,7 @@ module HandlerRegisterable
 
     # Return the registered handlers
     def registered_handlers
-      @@registered_handlers ||= {}
+      @registered_handlers ||= {}
     end
 
     # @param [Object] conditions An argument to be passed to the handles? and initialize methods
