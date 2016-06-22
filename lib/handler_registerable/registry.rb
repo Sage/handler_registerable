@@ -2,17 +2,26 @@
 module HandlerRegisterable
   # Registry Concept
   module Registry
+    @@default = nil
+
     # Enables setting the default handler to use.
-    attr_accessor :default
+    def default=(value)
+      @@default = value
+    end
+
+    # Get the default handler
+    def default
+      @@default
+    end
 
     # Register a new item in the store
     def register(item, key)
-      @registered_handlers[key] = item
+      registered_handlers[key] = item
     end
 
     # Return the registered handlers
     def registered_handlers
-      @registered_handlers ||= {}
+      @@registered_handlers ||= {}
     end
 
     # @param [Object] conditions An argument to be passed to the handles? and initialize methods
@@ -29,8 +38,8 @@ module HandlerRegisterable
       end
 
       # If no handler is found and there is a default, use that instead
-      if @default
-        @default.new(*conditions)
+      if default
+        default.new(*conditions)
       else
         raise HandlerRegisterable::Exceptions::NoHandlerAccepted
       end
