@@ -162,4 +162,4 @@ end
 
 Copyright (c) 2016 Sage
 
-[MIT License](https://github.com/Sage/handler_registerable/blob/master/LICENSE)
+[Apache-2.0 License](https://github.com/Sage/handler_registerable/blob/master/LICENSE)

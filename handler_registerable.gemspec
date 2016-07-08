@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{A gem to provide handler registry functionality}
   spec.description   = %q{A gem to provide handler registry functionality}
   spec.homepage      = "https://www.github.com/Sage/handler_registerable"
-  spec.license       = "MIT"
+  spec.license       = "Apache-2.0"
 
   spec.files         = Dir['lib/**/*']
   spec.test_files    = Dir['spec/**/*.rb']
