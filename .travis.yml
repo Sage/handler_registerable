@@ -1,6 +1,14 @@
 language: ruby
 rvm:
-  - 2.3.0
-  - 2.2.2
-  - 2.1.7
-  - 2.0.0
+- 2.3.0
+- 2.2.2
+- 2.1.7
+- 2.0.0
+deploy:
+  provider: rubygems
+  api_key:
+    secure: pTZrvR95IW7JyPhbOTd07RXs3umKy6rLbrLX1Ju4Deg5WDN2VjRllI6qd3FSER1geWlHh32/+FYC2zOLBf7aothlL+O/ECfUyMZ8T1fzk9RjR3/qjhP94K3/u5LfaEDFe/x3Sqmmv+bo99zaiGLu7wD3+AjJBwtr7E7s9r3TbWpRS5WIT6105QsBRYgM9Fz3hbTJW+ADHEmdqOaklERKrkVGdpacoOhC6b3OjA1fr7aHb6YplDnd5Hgb6K9ciMb3V0DFxcZMoyLsVW49CMxyeeCut6LyOZxQXwhHuBAfYvaxnWZFES0uVICGyObWm0Rc7uYTpItMVrzWfkcNjga4YXLd7ftY0jJ7K3S1loodqDYp8Fz1SkxSQ+r2Zt9S+Bj/FeQZOyqji9sezqJG3QQ43pxSsZVTlG+WQGMipsgzrXPk7LQ1oSal8q/BZhkYfPmgC62GYdTG8UjUn8Yn9NTYFnM6xKjG1TfSUyiOAXUyynGKFgUfmQi4uk5jKo6aN5jMDLLI6nE6lyoHpyAjpl9mNeSCdpeADfA0ASWO+hmuFv8riJtRzBunEA+4GvYiAPHd/aupqLzZt1f/roRSvvVlsvgUslCKk+WX+RBnEV42C8uR8zlTw6gBoH/GVxrAd3dT0HiMGAWjgqVktUe2Li8g/ywXlQV9DBlLC7+bIUcGmys=
+  gem: handler_registerable
+  on:
+    tags: true
+    repo: Sage/handler_registerable
