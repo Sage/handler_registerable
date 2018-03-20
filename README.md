@@ -1,6 +1,7 @@
 # HandlerRegisterable
 
 [![Build Status](https://travis-ci.org/Sage/handler_registerable.svg?branch=master)](https://travis-ci.org/Sage/handler_registerable)
+[![Maintainability](https://api.codeclimate.com/v1/badges/aa4fce157655c3ee8497/maintainability)](https://codeclimate.com/github/Sage/handler_registerable/maintainability)
 
 ## Description
 
