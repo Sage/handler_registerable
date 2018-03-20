@@ -1,5 +1,7 @@
 # HandlerRegisterable
 
+[![Build Status](https://travis-ci.org/Sage/handler_registerable.svg?branch=master)](https://travis-ci.org/Sage/handler_registerable)
+
 ## Description
 
 Registered handlers allow common code to collaborate with a handler which is designed to meet a more concrete requirement.
