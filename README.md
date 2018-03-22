@@ -161,8 +161,10 @@ def complete_signup(user)
 end
 ```
 
-# License
 
-Copyright (c) 2016 Sage
+## License
 
-[Apache-2.0 License](https://github.com/Sage/handler_registerable/blob/master/LICENSE)
+Handler Registerable is available as open source under the terms of the
+[Apache-2.0 licence](https://github.com/Sage/handler_registerable/blob/master/LICENSE).
+
+Copyright (c) 2018 Sage Group Plc. All rights reserved.
