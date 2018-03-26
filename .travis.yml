@@ -1,9 +1,6 @@
 language: ruby
 rvm:
 - 2.3.0
-- 2.2.2
-- 2.1.7
-- 2.0.0
 deploy:
   provider: rubygems
   api_key:
@@ -12,3 +9,13 @@ deploy:
   on:
     tags: true
     repo: Sage/handler_registerable
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+      > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+after_script:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+env:
+  global:
+    secure: bGh+Id8U+htJ540GAIXLSwW7PbCWcu5BBslFY+CBOuABgRcJSdlRuup9LAkck5GV/wYAKr5Pr2CFKh8/Euf/NEP+zpFmDJAkDx/UaR+7zyTn/PQISWpqLAX+OzUiHYCXrS8pEzPjQ8oDaAFcqDsw0EWRsq0qB/Z2ulzscw3cHNJqdVp9FNmWk77XcDrdTadOy7nVP8u95sWWAO73ChvM0Z/p/LbKRZaAu6kNtGrZQWGAFC2C22qyPVPd1qKW32s4oIjz1tbfbH+Z+rSKS4W5wL2C2AFc6A3beLnutgzriqjVvWckLUuts/CnxI9CMoFhMp4iYCjBZQnBxPYrcX7dCVFNTx+jQVCR1920hMIrpZdv4HXtyS7KNpVdwR6c9D0pX8SqdJ7WaZQxWcPjKeGVTE8iiADxcbz7mGR2LWFMdeRXPs+v+JK73ZTLqLjGLPBbc4Ti0GCReyr1YWkCMqMAvdnepMpSxderaDnN/2U5JaqKnNhf+WrbRDmrsQWQ2opgMVbzR0yLXtfhcGRdNB3qJaH7nlorxfSU/gu07KgAiBbDtTUg5oVKrF8aHpYRIvmhoPqhNNbpFDGecHKOKcEFaCpU1HLq3SJ0eGWfZmwyygxdqdnRhORzeaC2IbR3FycT/4npMKOEky1XnR6ds6T8NuJVq/WGnVB4CNHDmk/vFcE=
