@@ -79,7 +79,7 @@ module WelcomeHandlers
   class Example < Base
     register :first_time_user
 
-    def handles?(context)
+    def self.handles?(context)
       context.some_attribute == 'example'
     end
   end
@@ -103,8 +103,8 @@ Here's a couple of example handlers:
 class ProductOneWelcome < WelcomeHandler::Base
   register :product_one
 
-  def self.handles(user)
-    user.product = 'product_one'
+  def self.handles?(user)
+    user.product == 'product_one'
   end
 
   def welcome_message
@@ -119,8 +119,8 @@ end
 class ProductTwoeWelcome < WelcomeHandler::Base
   register :product_two
 
-  def self.handles(user)
-    user.product = 'product_two'
+  def self.handles?(user)
+    user.product == 'product_two'
   end
 
   def welcome_message
