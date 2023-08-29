@@ -26,18 +26,18 @@ module HandlerRegisterable
     # of the handler classes. Used to determine if they can deal with the request or not.
     # @return [Object, nil] An instance of the first handler class that returns true to handles?
     # when given the condition argument. The instance is initialized with the given condition.
-    def obtain(*conditions)
+    def obtain(*args, **kwargs)
       registered_handlers = self.registered_handlers
       # Reverses the order of the handlers, this allows for ones defined in an application rather
       # than an engine to come first (to allow for overriding a handle)
       registered_handlers = Hash[registered_handlers.to_a.reverse] unless no_handlers_defined?
       registered_handlers.each do |identifier, h|
-        return h.new(*conditions) if h.handles?(*conditions)
+        return h.new(*args, **kwargs) if h.handles?(*args, **kwargs)
       end
 
       # If no handler is found and there is a default, use that instead
       if default
-        default.new(*conditions)
+        default.new(*args, **kwargs)
       else
         raise HandlerRegisterable::Exceptions::NoHandlerAccepted
       end
