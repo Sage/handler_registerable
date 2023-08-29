@@ -1,0 +1,6 @@
+services:
+  handler-registerable:
+    image: sageone/handler-registerable
+    build: .
+    volumes:
+      - .:/usr/src/app
